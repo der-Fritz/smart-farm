@@ -1,5 +1,7 @@
 package com.baya.smartfarm.config;
 
+import com.baya.smartfarm.contractfarmer.ContractFarmer;
+import com.baya.smartfarm.contractfarmer.dto.ContractFarmerDto;
 import com.baya.smartfarm.contract.Contract;
 import com.baya.smartfarm.contract.ContractDto;
 import com.baya.smartfarm.farm.Department;
@@ -64,5 +66,8 @@ ContractDto map(Contract contract);
     Manager map(ManagerDto managerDto);
 
     ManagerDto map(Manager manager);
+
+  ContractFarmer map(ContractFarmerDto contractFarmerDto);
+  ContractFarmerDto map(ContractFarmer contractFarmer);
 }
 
