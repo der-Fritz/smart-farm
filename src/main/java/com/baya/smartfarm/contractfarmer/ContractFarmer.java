@@ -11,18 +11,19 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contractfarmers", indexes = {@Index(name = "indx_contractfarmer", columnList = "contract_id", unique = true)})
+@Table(name = "contractorfarmers", indexes = {@Index(name = "indx_contractorfarmers", columnList = "contId", unique = true)})
 @Getter
 @Setter
 @ToString
 @Access(AccessType.FIELD)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class ContractFarmer extends BaseEntity {
+public class ContractFarmer  {
 
-  @Column(name = "contract_id", length = 50, unique = false, nullable = false)
-  private String contractId;
+  @Id
+  @Column(name = "contId")
+  private Long contractId;
 
-  @Column(name = "farmer_id", length = 50, nullable = false)
+ @Column(name = "farmer_id",  length = 50, nullable = false)
   private String farmerId;
 
   @Column(name = "contract_id", length = 50, nullable = false)
