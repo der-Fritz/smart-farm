@@ -33,7 +33,6 @@ public class ContractServiceImpl implements ContractService {
       contractFarmer.setFarmerId(contract1.getFarmerNationalId());
       log.info("Creating a new contract: {}", contract1);
       contractFarmerService.register(contractFarmer);
-
       return contract1;
 
     }
