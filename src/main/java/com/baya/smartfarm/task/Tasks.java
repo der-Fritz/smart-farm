@@ -40,6 +40,4 @@ public class Tasks extends BaseEntity {
     @Column(name = "end_time", length = 50, nullable = true)
     private LocalDateTime endTime;
 
-
-
 }

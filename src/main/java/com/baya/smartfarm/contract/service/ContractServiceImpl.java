@@ -21,6 +21,7 @@ public class ContractServiceImpl implements ContractService {
 
     @Override
     public Contract register(Contract contract) {
+        log.info("Creating a new contract: {}", contract);
         return contractRepository.save(contract);
     }
 

@@ -1,5 +1,7 @@
 package com.baya.smartfarm.config;
 
+import com.baya.smartfarm.contract.Contract;
+import com.baya.smartfarm.contract.ContractDto;
 import com.baya.smartfarm.farm.Department;
 import com.baya.smartfarm.farm.DepartmentDto;
 import com.baya.smartfarm.farmer.Farmer;
@@ -24,6 +26,8 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface TypeMapper {
 
+Contract map(ContractDto contractDto);
+ContractDto map(Contract contract);
 
   Farmer map(FarmerDto farmerDto);
 
