@@ -8,5 +8,4 @@ public class ContractFarmerDto implements Serializable {
   private Long contractId;
   private String farmerId;
   private String contractorId;
-
 }
