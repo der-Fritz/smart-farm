@@ -33,7 +33,12 @@ public class FarmerAPI implements CrudApi<FarmerDto> {
   @PostMapping(value = "/register")
   public ApiResponse<FarmerDto> register(@Valid @RequestBody FarmerDto farmerDto) {
     log.info("New Registration : {} ", farmerDto);
-    final Farmer farmer = farmerService.register(mapper.map(farmerDto));
+
+    Farmer farmer= new Farmer();
+    farmer= mapper.map(farmerDto);
+    farmer.setDirections(farmerDto.getDistrict().getDirection());
+    farmer.setDistrictName(farmerDto.getDistrict().getDistrictName());
+    farmerService.register(farmer);
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(farmer));
   }
 

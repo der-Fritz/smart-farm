@@ -1,6 +1,8 @@
 package com.baya.smartfarm.farmer.service;
 
 import com.baya.smartfarm.farmer.Farmer;
+import com.baya.smartfarm.location.District;
+import com.baya.smartfarm.location.DistrictRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -18,13 +20,19 @@ import java.util.Optional;
 public class FarmerServiceImpl implements FarmerService {
 
   private final FarmerRepository farmerRepository;
+  private final DistrictRepository districtRepository;
 
   @Override
   public Farmer register(Farmer farmer) {
 
     log.info("Register Farmer :{}", farmer);
-    return farmerRepository.save(farmer);
-
+     Farmer farmer1= farmerRepository.save(farmer);
+    District district = new District();
+    district.setName(farmer1.getDistrictName());
+    district.setDirections(farmer1.getDirections());
+    districtRepository.save(district);
+    log.info("Register Farmer :{}", district);
+   return farmer1;
   }
 
 

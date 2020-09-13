@@ -19,8 +19,5 @@ public class Province extends BaseEntity {
   @Column
   private String name;
 
-  @ToString.Exclude
-  @OneToMany(mappedBy = "province")
-  private List<District> districts;
 
 }
