@@ -32,7 +32,7 @@ public class FarmerServiceImpl implements FarmerService {
     district.setDirections(farmer1.getDirections());
     districtRepository.save(district);
     log.info("Register Farmer :{}", district);
-   return farmer1;
+   return farmer;
   }
 
 
