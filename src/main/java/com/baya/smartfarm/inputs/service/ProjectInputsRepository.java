@@ -7,6 +7,5 @@ import java.util.Optional;
 
 public interface ProjectInputsRepository extends JpaRepository<ProjectInputs, Long> {
     Optional<ProjectInputs> findBySerialNo(String serialNo);
-
     Optional<ProjectInputs> findByName(String name);
 }

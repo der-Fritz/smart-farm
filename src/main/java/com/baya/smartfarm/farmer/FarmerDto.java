@@ -11,7 +11,6 @@ import java.io.Serializable;
 
 @Data
 public class FarmerDto extends BaseDto implements Serializable {
-
   private String msisdn;
   private String firstName;
   private String lastName;
@@ -21,6 +20,5 @@ public class FarmerDto extends BaseDto implements Serializable {
   private double longitude;
   private double latitude;
   private String village;
-
 
 }
