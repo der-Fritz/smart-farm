@@ -14,8 +14,8 @@ import com.baya.smartfarm.location.District;
 import com.baya.smartfarm.location.DistrictDto;
 import com.baya.smartfarm.location.Province;
 import com.baya.smartfarm.location.ProvinceDto;
-import com.baya.smartfarm.merchant.Supplier;
-import com.baya.smartfarm.merchant.SupplierDto;
+import com.baya.smartfarm.merchant.Merchant;
+import com.baya.smartfarm.merchant.MerchantDto;
 import com.baya.smartfarm.product.Product;
 import com.baya.smartfarm.product.ProductDto;
 import com.baya.smartfarm.project.Manager;
@@ -51,9 +51,9 @@ ContractDto map(Contract contract);
 
     ProjectInputsDto map(ProjectInputs projectInputs);
 
-    Supplier map(SupplierDto supplierDto);
+    Merchant map(MerchantDto merchantDto);
 
-    SupplierDto map(Supplier supplier);
+    MerchantDto map(Merchant merchant);
 
     Product map(ProductDto productDto);
 

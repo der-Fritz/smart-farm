@@ -17,7 +17,7 @@ import javax.persistence.*;
 @ToString
 @Access(AccessType.FIELD)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Supplier extends BaseEntity {
+public class Merchant extends BaseEntity {
 
     @Column(name = "name", length = 50, unique = false, nullable = false)
     private String name;

@@ -1,7 +1,7 @@
 package com.baya.smartfarm.inputs;
 
 import com.baya.smartfarm.common.BaseDto;
-import com.baya.smartfarm.merchant.SupplierDto;
+import com.baya.smartfarm.merchant.MerchantDto;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,5 +13,5 @@ public class ProjectInputsDto extends BaseDto implements Serializable {
     private String name;
     private double quantity;
     private double price;
-    private SupplierDto supplier;
+    private MerchantDto supplier;
 }

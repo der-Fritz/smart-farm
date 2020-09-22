@@ -7,7 +7,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class SupplierDto extends BaseDto implements Serializable {
+public class MerchantDto extends BaseDto implements Serializable {
 
     private String name;
     private String msisdn;
