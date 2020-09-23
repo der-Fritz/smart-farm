@@ -21,7 +21,7 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public Merchant register(Merchant merchant) {
-        log.info("Register Merxhant :{}", merchant);
+        log.info("Register Merchant :{}", merchant);
         return merchantRepository.save(merchant);
     }
 
