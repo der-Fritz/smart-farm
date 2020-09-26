@@ -32,6 +32,13 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
+    public void deleteById(Long id) {
+        merchantRepository.deleteById(id);
+
+    }
+
+
+    @Override
     public Optional<Merchant> findByName(String name) {
         return merchantRepository.findByName(name);
     }

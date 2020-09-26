@@ -12,7 +12,7 @@ public class MerchantDto extends BaseDto implements Serializable {
     private String name;
     private String msisdn;
     private MerchantType merchantType;
-    private DistrictDto district;
+
     private String longitude;
     private String latitude;
     private String growthPoint;

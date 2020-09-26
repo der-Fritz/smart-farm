@@ -11,6 +11,7 @@ public interface MerchantService {
     Merchant register(Merchant merchant);
 
     Optional<Merchant> findById(Long id);
+    void deleteById(Long id);
 
     Optional<Merchant> findByName(String name);
 

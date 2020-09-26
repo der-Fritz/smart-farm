@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/merchant")
 public class MerchantApi implements CrudApi<MerchantDto> {
 
@@ -33,7 +34,7 @@ public class MerchantApi implements CrudApi<MerchantDto> {
 
     @PostMapping(value = "/register")
     public ApiResponse<MerchantDto> register(@Valid @RequestBody MerchantDto merchantDto) {
-        log.info("New supplier registration : {} ", merchantDto);
+        log.info("New merchant registration : {} ", merchantDto);
         final Merchant merchant = merchantService.register(mapper.map(merchantDto));
         return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(merchant));
     }
@@ -44,6 +45,7 @@ public class MerchantApi implements CrudApi<MerchantDto> {
         Merchant merchant = merchantService.register(mapper.map(merchantDto));
         return new  ApiResponse<>(HttpStatus.OK.value(), mapper.map(merchant));
     }
+
     @GetMapping(value = "/find/{name}")
     public ApiResponse<MerchantDto> findMerchant(@PathVariable(name = "name") final String name) {
         final Optional<Merchant> merchant = merchantService.findByName(name);
@@ -60,9 +62,13 @@ public class MerchantApi implements CrudApi<MerchantDto> {
     }
 
     @Override
-    @DeleteMapping(value ="/delete")
     public ApiResponse<MerchantDto> delete(MerchantDto merchantDto) {
         return null;
+    }
+
+    @DeleteMapping(value ="/delete/{id}")
+    public void deleteMerchant(@PathVariable Long id){
+        merchantService.deleteById(id);
     }
 
     @Override
@@ -78,6 +84,7 @@ public class MerchantApi implements CrudApi<MerchantDto> {
     }
 
     @Override
+    @GetMapping(value = "findById/{id}")
     public ApiResponse<MerchantDto> find(Long id) {
         final Optional<Merchant> merchant = merchantService.findById(id);
         return merchant.map(merchant1 ->new ApiResponse<>(HttpStatus.OK.value(), mapper.map(merchant1)))

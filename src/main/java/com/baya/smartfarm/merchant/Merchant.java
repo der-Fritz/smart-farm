@@ -1,8 +1,7 @@
 package com.baya.smartfarm.merchant;
 
 import com.baya.smartfarm.common.BaseEntity;
-import com.baya.smartfarm.location.District;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +10,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "suppliers", indexes = {@Index(name = "indx_supplier", columnList = "msisdn", unique = true)})
+@Table(name = "merchant", indexes = {@Index(name = "indx_index", columnList = "msisdn", unique = true)})
 @Getter
 @Setter
 @ToString
@@ -28,10 +27,7 @@ public class Merchant extends BaseEntity {
     @Column(name = "merchant_type", length = 50, nullable = false)
     private MerchantType merchantType;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "district_id", nullable = false)
-    @JsonIgnore
-    private District district;
+
 
     @Column(name = "longitude", length = 50, nullable = true)
     private String longitude;
