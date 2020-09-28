@@ -7,6 +7,7 @@ import com.baya.smartfarm.config.TypeMapper;
 import com.baya.smartfarm.exception.BusinessException;
 import com.baya.smartfarm.farmer.Farmer;
 import com.baya.smartfarm.farmer.FarmerDto;
+import com.baya.smartfarm.farmer.service.FarmerRepository;
 import com.baya.smartfarm.farmer.service.FarmerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,11 +25,12 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/farmer")
-
+@CrossOrigin(origins = "http://localhost:4200")
 public class FarmerAPI implements CrudApi<FarmerDto> {
 
   private final FarmerService farmerService;
   private final TypeMapper mapper;
+  private final FarmerRepository farmerRepository;
 
   @PostMapping(value = "/register")
   public ApiResponse<FarmerDto> register(@Valid @RequestBody FarmerDto farmerDto) {
