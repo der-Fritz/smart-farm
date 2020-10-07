@@ -54,9 +54,8 @@ public class MerchantApi implements CrudApi<MerchantDto> {
     }
 
     @Override
-
     public ApiResponse<MerchantDto> update(MerchantDto merchantDto) {
-        log.info("Updating existing supplier details: {}", merchantDto);
+        log.info("Updating existing merchant  details: {}", merchantDto);
         Merchant merchant = merchantService.update(mapper.map(merchantDto));
         return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(merchant));
     }

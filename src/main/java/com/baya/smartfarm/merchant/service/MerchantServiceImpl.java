@@ -18,7 +18,7 @@ import java.util.Optional;
 public class MerchantServiceImpl implements MerchantService {
 
     private  final MerchantRepository merchantRepository;
-
+    private Merchant merchant1;
     @Override
     public Merchant register(Merchant merchant) {
         log.info("Register Merchant :{}", merchant);
@@ -50,6 +50,10 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public Merchant update(Merchant merchant) {
+
+
+
+
         return merchantRepository.save(merchant);
     }
 
