@@ -9,7 +9,7 @@ public interface CrudApi<T> {
   @CrossOrigin(origins = "*", allowedHeaders = "*")
   ApiResponse<T> create(@RequestBody T t);
 
-  @PutMapping("/update")
+  @PutMapping("/update/{id}")
   @CrossOrigin(origins = "*", allowedHeaders = "*")
   ApiResponse<T> update(@RequestBody T t);
 

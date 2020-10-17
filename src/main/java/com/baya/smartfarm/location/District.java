@@ -18,15 +18,9 @@ import javax.persistence.*;
 @Access(AccessType.FIELD)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class District extends BaseEntity {
-
   @Column
   private String name;
-
   @Column
-  private int totalWards;
-
-  @ManyToOne
-  private Province province;
-
+  private String directions;
 
 }
