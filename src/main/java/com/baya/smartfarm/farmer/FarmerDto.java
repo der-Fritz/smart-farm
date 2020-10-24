@@ -15,7 +15,8 @@ public class FarmerDto extends BaseDto implements Serializable {
   private String firstName;
   private String lastName;
   private String idNumber;
-  private DistrictDto district;
+  private String direction;
+  private String districtName;
   private int ward;
   private double longitude;
   private double latitude;

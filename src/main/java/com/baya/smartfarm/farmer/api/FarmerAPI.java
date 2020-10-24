@@ -4,6 +4,7 @@ import com.baya.smartfarm.common.ApiResponse;
 import com.baya.smartfarm.common.CrudApi;
 import com.baya.smartfarm.common.PaginationResult;
 import com.baya.smartfarm.config.TypeMapper;
+import com.baya.smartfarm.contract.Contract;
 import com.baya.smartfarm.exception.BusinessException;
 import com.baya.smartfarm.farmer.Farmer;
 import com.baya.smartfarm.farmer.FarmerDto;
@@ -36,11 +37,13 @@ public class FarmerAPI implements CrudApi<FarmerDto> {
   public ApiResponse<FarmerDto> register(@Valid @RequestBody FarmerDto farmerDto) {
     log.info("New Registration : {} ", farmerDto);
 
-    Farmer farmer= new Farmer();
-    farmer= mapper.map(farmerDto);
-    farmer.setDirections(farmerDto.getDistrict().getDirection());
-    farmer.setDistrictName(farmerDto.getDistrict().getDistrictName());
-    farmerService.register(farmer);
+//    Farmer farmer= new Farmer();
+//    farmer= mapper.map(farmerDto);
+//    farmer.setDirections(farmerDto.getDistrict().getDirection());
+//    farmer.setDistrictName(farmerDto.getDistrict().getDistrictName());
+//    farmerService.register(farmer);
+    final Farmer farmer = farmerService.register(mapper.map(farmerDto));
+
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(farmer));
   }
 
