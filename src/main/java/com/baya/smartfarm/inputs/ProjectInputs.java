@@ -1,7 +1,7 @@
 package com.baya.smartfarm.inputs;
 
 import com.baya.smartfarm.common.BaseEntity;
-import com.baya.smartfarm.merchant.Supplier;
+import com.baya.smartfarm.merchant.Merchant;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
@@ -34,7 +34,7 @@ public class ProjectInputs extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "supplier_id", nullable = false)
     @JsonIgnore
-    private Supplier supplier;
+    private Merchant merchant;
 
 
 }
